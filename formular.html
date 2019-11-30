@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="css/styl.css">
+   <!-- <script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=vxwi0062gn1whd2o29nyfesxi0wtsbwkj81vb8opbae4ha09"></script>-->
+    <script src="tinymce/js/tinymce/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector: '#content'
+        });
+    </script>
+    <meta name="google-signin-client_id" content="1017210445730-ckt95lbbcuceaifcavsm26t1o6qh76m4.apps.googleusercontent.com">
+    <title>Stránka s prihlásením</title>
+
+    <link rel="stylesheet"
+          href="css/blogStyleBasic.css"
+          media="screen" />
+    <title>New article</title>
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId            : '287193222166891',
+                autoLogAppEvents : true,
+                xfbml            : true,
+                version          : 'v3.3'
+            });
+            FB.getLoginStatus(function(response) {
+                if (response.status === 'connected' && localStorage.loggedOut !== 'out') {
+                    signInFB();
+                }
+            });
+        };
+    </script>
+    <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+</head>
+<body>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/sk_SK/sdk.js#xfbml=1&version=v3.3&appId=287193222166891&autoLogAppEvents=1"></script>
+
+<header>
+    <nav>
+
+        <a href="html/articles.html" title="Welcome !!! ">Home</a>
+        <a href="html/article1.html" title="Erasmus Student Network Slovakia">About ESN</a>
+        <a href="html/article2.html" title="Our partners are">Partners</a>
+        <a href="html/article3.html" title="Contact us">Contact</a>
+        <a href="makePicture.html" title="Make picture">Make pic</a>
+        <a href="html/vypisClankov.html" title="All our articles">Article list</a>
+
+    </nav>
+    <aside id="googleSignIn">
+        <div id="SignInButton"></div>
+        <div id="SignedIn">
+            <small>Ste prihlásený ako <span id="userName"></span> <button onclick="signOut()">Odhlásiť sa</button></small>
+        </div>
+    </aside>
+
+    <div class="fbook" id="fbook">
+
+        <fb:login-button id="fbbutton" class="fb" scope="public_profile" onlogin="checkFacebookLogin();"></fb:login-button>
+        <div id="signOutFb" class="signOutFB hidden">
+            <strong>FaceBook:</strong>
+            <button class="SignOutButtons" onclick="FB.logout(function(response) {signOutFB();});">Odhlásiť sa</button>
+        </div>
+    </div>
+
+    <script src="js/82GoogleAccessBetter.js"></script>
+    <script src="https://apis.google.com/js/platform.js?onload=startGSingIn" async defer></script>
+
+
+</header>
+
+<div class="breadcrumb">
+    <li><a href="html/articles.html">Home</a></li>
+    <li><a href="html/vypisClankov.html">Article list</a></li>
+    <li>New article</li>
+</div>
+
+<main>
+<h2 id="frmTitle" class="nadpis">New <span class="obdlznik_v_texte">article</span> </h2>
+
+    <form id="SKorFrm" method="post" >
+    <fieldset style="background-color: antiquewhite">
+    <label for="author">Author:</label>
+    <input type="text" name="author" id="author" size="50"
+           maxlength="100" />
+    <br>
+    <label for="title">Title:</label>
+    <input type="text" name="title" id="title" size="50"
+           maxlength="100" pattern="\S[\S\s]*" required
+           title="Article title, mandatory item, max. length: 100 characters, the first character must not be a space."
+           placeholder="e.g. My story." />
+    <br>
+    <label for="imageLink">Image (url):</label>
+    <input type="url" name="imageLink" id="imageLink" size="50"
+           title="image URL, max. length 100 characters" maxlength="100"/>
+    <br>
+    <input type="file" id="flElm" name="file" accept="image/jpeg, image/png"/>
+    <button type="button" id="btFileUpload">Send image to server</button>
+    <button type="button" id="btCancelFileUpload">Cancel uploading</button>
+    <br>
+    <label for="content">Article content:</label><br>
+    <textarea name="content" id="content" spellcheck="true" lang="sk" cols="100" rows="20"
+              title="Article content, mandatory item, can be plain text or in HTML"></textarea>
+    <br>
+    <label for="tags">Keywords:</label>
+    <input type="text" list="keywords" name="tags" id="tags" size="50"
+           title="Keyword list, comma separated"
+           placeholder="e.g. erasmus, esn" />
+    <div id="klucove_slova">
+
+        </div>
+        <br>
+        <br>
+        <button type="submit" onclick="tinyMCE.triggerSave();">Save</button>
+        <button type="button" id="btBack">Back</button>
+        <button type="reset">Delete</button>
+
+        <input type="button" value="Home" onclick="location.href='/html/articles.html';" />
+
+    <!--
+        <fieldset style="background-color: antiquewhite">
+            <legend><b>Author</b></legend>
+            <label for="author">Your name: </label>
+            <input type="text" name="author" id="author" size="20"
+                   maxlength="50" required spellcheck="false" lang="sk" placeholder="e.g. John Snow">
+         <br><br>
+        <label>Your email:
+            <input type="email" spellcheck="false" lang="sk">
+        </label>
+        </fieldset>
+
+        <fieldset style="background-color: antiquewhite">
+            <legend><b>Article</b></legend>
+            <label for="title">Title: </label>
+            <input type="text" name="title" id="title" size="20"
+                   maxlength="50" required spellcheck="true" lang="sk" pattern="\S[\S\s]*"
+                   title="Only number and alfa character. First must be alfa char." placeholder="e.g. My erasmus in Italy." >
+
+        <br><br>
+        <label>Image:
+            <input type="file" accept="image/jpeg, image/png">
+        </label>
+
+        <br><br>
+
+        <label>URL of image:
+            <input type="url" value="https://example.com">
+        </label>
+
+        <br><br>
+
+        Use as main photo:
+            <LABEL>
+            <input type="radio" name="A">File
+            </LABEL>
+
+            <input type="radio" id="URL" name="A">
+            <label for="URL">URL</label>
+
+
+        <br><br>
+
+         <label>Keywords:
+         <input type="text" list="keywords" spellcheck="false" lang="sk"/>
+         </label>
+
+         <datalist id="keywords">
+                <option value="ESN">
+                <option value="Erasmus">
+                <option value="Partners">
+                <option value="Mobility">
+                <option value="Abroad">
+         </datalist>
+
+
+         <br><br>
+            <label>Choose your background:
+                <input type="color" value="#e66465">
+            </label>
+        <br><br>
+
+            <label>Date when the article will be published:
+                <input type="date" max="2019-12-31" >
+            </label>
+
+        <br><br>
+            <br>
+        <label for="content">Content:<br> </label>
+        <textarea name="content" id="content" cols="100" rows="20" required spellcheck="true" lang="sk"></textarea>
+
+
+        <br><br>
+
+        <input type="reset" value="Delete" />
+        <input type="submit" value="Send" />
+
+            <button type="submit">
+                Ulož článok / Save article
+            </button>
+
+        <input type="button" value="Home" onclick="location.href='articles.html';" />
+        </fieldset>-->
+    </fieldset>
+</form>
+
+<footer class="footer">
+            <time datetime="2019-02-26">Datum vytvorenia 26.02.2019</time><br>
+            Autor: <a href="mailto:maria.medvidova@student.tuke.sk?Subject=Reakcia%20na%20Váš%20blog%20s%20názvom%20ESN">Mária Medviďová</a><br>
+            Email: maria.medvidova@student.tuke.sk
+        <details>
+            <summary>Copyright 2019.</summary>
+            <p> - by Maja. All Rights Reserved.</p>
+            <p>All content and graphics on this web site are the property of author.</p>
+        </details>
+</footer>
+</main>
+
+
+
+<script src="js/82GoogleAccessBetter.js"></script>
+<script src="https://apis.google.com/js/platform.js?onload=startGSingIn" async defer></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+<script>window.Mustache || document.write('<script src="js/libs/mustache.min.js"><\/script>')</script>
+
+<script src="js/common/settings.js"></script>
+
+<script src="js/common/messages.js"></script>
+<script src="js/common/ajaxCalls.js"></script>
+<script src="js/common/mustacheRenderer.js"></script>
+<script src="js/common/queryStringProcessing.js"></script>
+<script src="js/common/formProcessing.js"></script>
+
+<script src="js/articleForm.js"></script>
+<script src="js/ForSigningIn.js"></script>
+<script src="js/82GoogleAccessBetter.js"></script>
+<script src="https://apis.google.com/js/platform.js?onload=startGSingIn" async defer></script>
+
+
+</body>
+</html>

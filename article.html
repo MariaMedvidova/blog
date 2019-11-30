@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <title>Článok / Article</title>
+    <link rel="stylesheet" type="text/css" href="css/styleListArticles.css">
+    <meta name="google-signin-client_id" content="1017210445730-ckt95lbbcuceaifcavsm26t1o6qh76m4.apps.googleusercontent.com">
+    <link rel="stylesheet"
+          href="css/blogStyleBasic.css"
+          media="screen" />
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId            : '287193222166891',
+                autoLogAppEvents : true,
+                xfbml            : true,
+                version          : 'v3.3'
+            });
+            FB.getLoginStatus(function(response) {
+                if (response.status === 'connected' && localStorage.loggedOut !== 'out') {
+                    signInFB();
+                }
+            });
+        };
+    </script>
+    <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+</head>
+
+<body>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/sk_SK/sdk.js#xfbml=1&version=v3.3&appId=287193222166891&autoLogAppEvents=1"></script>
+
+<div class="wrapper">
+
+    <div class="header">
+        <header>
+            <nav id="nav">
+
+                <a href="html/articles.html" title="Welcome !!! ">Home</a>
+                <a href="html/article1.html" title="Erasmus Student Network Slovakia">About ESN</a>
+                <a href="html/article2.html" title="Our partners are">Partners</a>
+                <a href="html/article3.html" title="Contact us">Contact</a>
+                <a href="makePicture.html" title="Make picture">Make pic</a>
+                <a href="html/vypisClankov.html" title="Article list">Article list</a>
+
+            </nav>
+            <aside id="googleSignIn">
+                <div id="SignInButton"></div>
+                <div id="SignedIn">
+                    Ste prihlásený ako <span id="userName"></span> <button onclick="signOut()">Odhlásiť sa</button>
+                </div>
+            </aside>
+
+            <div class="fbook" id="fbook">
+
+                <fb:login-button id="fbbutton" class="fb" scope="public_profile" onlogin="checkFacebookLogin();"></fb:login-button>
+                <div id="signOutFb" class="signOutFB hidden">
+                    <strong>FaceBook:</strong>
+                    <button class="SignOutButtons" onclick="FB.logout(function(response) {signOutFB();});">Odhlásiť sa</button>
+                </div>
+            </div>
+
+            <script src="js/82GoogleAccessBetter.js"></script>
+            <script src="https://apis.google.com/js/platform.js?onload=startGSingIn" async defer></script>
+
+
+        </header>
+        <div class="breadcrumb">
+            <li><a href="html/articles.html">Home</a></li>
+            <li><a href="html/vypisClankov.html">Article list</a></li>
+            <li>Article</li>
+    </div>
+
+
+    </div>
+
+    <div class="content">
+
+        <section class="article" id="blok">
+            <img src="pictures/palm.png" alt="palm" id="palm">
+
+            <nav class="tlacidla">
+                <button id="btDelete">
+                    X
+                </button>
+                <button id="btUpdate">
+                    Edit article
+                </button>
+                <button id="btArtList" >
+                    Article list
+                </button>
+            </nav>
+
+            <main id="article"></main>
+
+        </section>
+
+        <section class="article" >
+            <h2 class="nadpis">Comments</h2>
+
+            <button onclick="toogle()" class="new_comment_button">New comment</button>
+
+            <div id="myDiv">
+            <form id="AddComment" method="post" action="html/badProcessing.html">
+                <fieldset style="background-color: antiquewhite">
+                    <label for="author">Author:</label>
+                    <input type="text" name="author" id="author" size="50" title="comment author, max. length 100 characters)."
+                           maxlength="100" placeholder="John Snow" />
+                    <br>
+                    <label for="text">Comment:</label><br>
+                    <textarea name="text" id="text" spellcheck="true" lang="sk" cols="100" rows="5" required
+                              title="Comment content, mandatory item"></textarea>
+                    <br>
+
+                    <button type="submit">Save</button>
+                    <button type="reset">Delete</button>
+
+                </fieldset>
+            </form>
+            </div>
+            <main id="comment"></main>
+
+            <nav id="navigacia"></nav>
+        </section>
+
+    </div>
+
+    <div class="sidebar">
+        <ul id="sidebar_list">
+            <li> <a href="html/articles.html" title="Welcome !!! ">Home</a></li>
+            <li> <a href="html/article1.html" title="Erasmus Student Network Slovakia">About ESN</a></li>
+            <li> <a href="html/article2.html" title="Our partners are">Partners</a></li>
+            <li> <a href="html/article3.html" title="Contact us">Contact</a></li>
+            <li> <a href="formular.html" title="New article">New article</a></li>
+            <li><a href="html/vypisClankov.html" title="Article list">Article list</a></li>
+        </ul>
+    </div>
+
+
+    <div class="footer">
+        <footer>
+            Datum vytvorenia: 26.2.2019<br>
+            Autor: <a href="mailto:maria.medvidova@student.tuke.sk?Subject=Reakcia%20na%20Váš%20blog%20s%20názvom%20ESN">Mária Medviďová</a><br>
+            Email: maria.medvidova@student.tuke.sk
+            <details>
+                <summary>Copyright 2019.</summary>
+                <p> - by Maja. All Rights Reserved.</p>
+                <p>All content and graphics on this web site are the property of author.</p>
+            </details>
+        </footer>
+    </div>
+
+</div>
+
+<!----------------------------- JavaScript ---------------------------------------------------------------------------->
+
+<script src="js/common/settings.js"></script>
+<script src="js/ziskajClanky.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+<script>window.Mustache || document.write('<script src="js/mustache.min.js"><\/script>')</script>
+
+
+<script src="js/common/messages.js"></script>
+<script src="js/common/mustacheRenderer.js"></script>
+<script src="js/common/ajaxCalls.js"></script>
+<script src="js/common/queryStringProcessing.js"></script>
+<script src="js/common/formProcessing.js"></script>
+
+<script src="js/article.js"></script>
+<script src="js/comment.js"></script>
+<script src="js/commentForm.js"></script>
+
+<script src="js/ForSigningIn.js"></script>
+<script src="js/82GoogleAccessBetter.js"></script>
+<script src="https://apis.google.com/js/platform.js?onload=startGSingIn" async defer></script>
+
+</body>
+</html>
+

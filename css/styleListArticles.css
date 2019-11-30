@@ -1,0 +1,362 @@
+form input:required {
+    box-shadow: 0 0 3px 1px green;
+}
+form input:invalid {
+    box-shadow: 0 0 3px 1px red;
+}
+
+#buttonEdit{
+    float:right;
+    position:relative;
+    overflow:hidden;
+    background:#CCC;
+    border-radius:2px;
+    border:solid 2px gray;
+    cursor:pointer;
+    margin: 1px;
+}
+
+#buttonDelete{
+    float:right;
+    position:relative;
+    overflow:hidden;
+    background:#CCC;
+    border-radius:2px;
+    border:solid 2px gray;
+    cursor:pointer;
+    margin: 1px;
+    margin-right: 10px;
+}
+
+#btDelete{
+    margin-right: 20px;
+}
+
+.tlacidla button{
+    float:right;
+    position:relative;
+    overflow:hidden;
+    background:#CCC;
+    border-radius:2px;
+    border:solid 2px gray;
+    cursor:pointer;
+    margin: 1px;
+}
+
+.PpohybTlacidla{
+    background-color: darksalmon;
+    color: white;
+    padding: 10px;
+    font-style: oblique;
+    font-weight: bold;
+    font-size: medium;
+    width: 20%;
+}
+.NpohybTlacidla{
+    background-color: darksalmon;
+    color: white;
+    padding: 10px;
+    font-style: oblique;
+    font-weight: bold;
+    font-size: medium;
+    width: 20%;
+}
+.new_article_button{
+    background-color: darksalmon;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    width: 98%;
+    height: 40px;
+    border: 1px solid black;
+    margin: 0 auto;
+    position:relative;
+    margin-left: 1%;
+    border-radius: 20%;
+    margin-top: 1%;
+}
+
+.new_comment_button{
+    background-color: darksalmon;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    width: 98%;
+    height: 40px;
+    border: 1px solid black;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    position:relative;
+    margin-left: 1%;
+    border-radius: 20%;
+    margin-top: 1%;
+}
+
+.sidebar button{
+    background-color: darksalmon;
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    border-radius: 35%;
+    margin-left: 2%;
+    width: 96%;
+    height: 70px;
+    border: none;
+}
+.article {
+    background-color: antiquewhite;
+    margin-top: 30px;
+    padding-top: 30px;
+}
+
+.skryty{display: none}
+
+.zobraz{display: block}
+
+#menuCl > button {
+    display: block;
+    width: 100%;
+}
+
+#menuCl{
+    position:absolute;
+    padding: 0.5em;
+}
+
+#menuClNazov:hover, #menuCl > button:hover{
+    text-decoration: none;
+    background-color: #90BA00;
+}
+
+.obdlznik_v_texte{
+    background-color: #000;
+    color: #fff;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center;
+}
+
+.nadpis {
+    background-color: antiquewhite;
+    font-family: Georgia, Verdana, "Times New Roman", serif;
+    font-size: xx-large;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+#fbook{
+    display: block;
+    float:left;
+}
+
+#fbook.hidden{
+    display: none;
+}
+
+#fbbutton
+{
+    display: block;
+}
+
+#fbbutton.hidden
+{
+    display: none;
+}
+
+#signOutFb{
+    display: block;
+}
+
+#signOutFb.hidden{
+    display: none;
+}
+
+nav div{
+    padding: 30px 30px;
+}
+
+nav a {
+    color: white;
+    text-align: center;
+    padding: 30px 30px;
+    text-decoration: none;
+    font-size: x-large;
+}
+
+#nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.header {
+    grid-area: hd;
+}
+.footer {
+    grid-area: ft;
+}
+.content {
+    grid-area: main;
+}
+.breadcrumb{
+    grid-area: br;
+}
+
+#sidebar_list a{
+    text-decoration: none;
+    color: black;
+}
+
+.sidebar {
+    grid-area: sd;
+    background-color: #eee;
+    margin-top: 30px;
+    margin-bottom: 5%;
+    margin-right: 5%;
+    padding-top: 2%;
+}
+
+/* Style the list */
+.breadcrumb{
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+}
+/* Display list items side by side */
+.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    grid-auto-rows: minmax(20px, auto);
+    grid-template-areas:
+            "hd hd hd hd hd hd hd hd hd hd hd hd  hd"
+            "br br br br br br br br br br br br br"
+            "sd sd main main main main main main main main main main main"
+            "ft ft ft ft ft ft ft ft ft ft ft ft ft";
+}
+
+header{
+    background-color: lightgray;
+    font-size: large;
+    text-align: center;
+    padding: 20px;
+}
+
+body{
+    background-image: url("../pictures/background4.jpg");
+    padding:10px;
+    padding-bottom:60px;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+legend {
+    background-color: grey;
+    color: #fff;
+    padding: 3px 6px;
+}
+
+fieldset{
+    padding-top: 10px;
+}
+
+form{
+    width: 100%;
+}
+
+#clanky{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+p {
+    font-family: Arial, Verdana, "Times New Roman", serif;
+    font-size: medium;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    line-height: 140%;
+}
+
+
+
+@media screen and (max-width: 1100px)  {
+    .sidebar ul{
+        display: none;
+    }
+    .sidebar button{
+        font-size: medium;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    nav a{
+        font-size: medium;
+    }
+    .sidebar button{
+        font-size: x-small;
+    }
+    header{
+        font-size: xx-small;
+    }
+}
+
+footer {
+    font-family: Arial, Verdana, "Times New Roman", serif;
+    text-align: left;
+    background-color: lightgray;
+    padding: 15px;
+}
+
+#sidebar_list{
+    list-style-type: circle;
+    font-weight: bold;
+}
+
+#palm {
+    width: 100%;
+    animation: circle 5s infinite;
+}
+
+@keyframes circle {
+    0%{
+        border-radius: 40%;
+    }
+    30%{
+        border-radius: 50%;
+    }
+    50% {
+        border-radius: 80%;
+    }
+    80%{
+        border-radius: 40%;
+    }
+    100%{
+        border-radius: 40%;
+    }
+}

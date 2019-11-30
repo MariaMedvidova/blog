@@ -1,0 +1,362 @@
+.article {
+    background-color: antiquewhite;
+    margin-top: 30px;
+    padding-top: 30px;
+}
+
+.obdlznik_v_texte{
+    background-color: #000;
+    color: #fff;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center;
+}
+
+.nadpis {
+    background-color: antiquewhite;
+    font-family: Georgia, Verdana, "Times New Roman", serif;
+    font-size: xx-large;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.nadpis_mensi{
+    font-size: x-large;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.centerUl ul{
+    padding-left: 30%;
+    font-size:18px;
+    padding-bottom: 5%;
+}
+
+/* Add a black background color to the top navigation */
+nav {
+    background-color: lightgray;
+    height: border-box;
+}
+
+/* Style the links inside the navigation bar */
+nav a {
+    color: white;
+    text-align: center;
+    padding: 30px 30px;
+    text-decoration: none;
+    font-size: x-large;
+}
+
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+@media screen and (max-width: 800px) {
+    .nadpis {
+        font-size: x-large;
+    }
+    .nadpis_mensi{
+        font-size: large;
+    }
+    p{
+        font-size: medium;
+    }
+    nav a{
+        font-size: large;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .nadpis {
+        font-size: large;
+    }
+    .nadpis_mensi{
+        font-size: medium;
+    }
+    p{
+        font-size: small;
+    }
+    nav a{
+        font-size: medium;
+    }
+}
+
+.center {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.header {
+    grid-area: hd;
+}
+.footer {
+    grid-area: ft;
+}
+.content {
+    grid-area: main;
+}
+.breadcrumb{
+    grid-area: br;
+}
+
+#sidebar_list a{
+    text-decoration: none;
+    color: black;
+}
+
+.sidebar {
+    grid-area: sd;
+    background-color: #eee;
+    margin-top: 30px;
+    margin-bottom: 5%;
+    margin-right: 5%;
+    padding-top: 2%;
+}
+
+/* Style the list */
+.breadcrumb{
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+}
+/* Display list items side by side */
+.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    grid-auto-rows: minmax(20px, auto);
+    grid-template-areas:
+            "hd hd hd hd hd hd hd hd hd hd hd hd  hd"
+            "br br br br br br br br br br br br br"
+            "sd sd main main main main main main main main main main main"
+            "ft ft ft ft ft ft ft ft ft ft ft ft ft";
+}
+
+header{
+    background-color: lightgray;
+    font-size: large;
+    text-align: center;
+    padding: 20px;
+}
+
+p {
+    font-family: Arial, Verdana, "Times New Roman", serif;
+    font-size: medium;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    line-height: 140%;
+}
+
+body{
+    background-image: url("../pictures/background4.jpg");
+    padding:10px;
+    padding-bottom:60px;
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+@media screen and (max-width: 1100px)  {
+    .sidebar ul{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    body {
+        background-color: blue;
+    }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+    body {
+        background-color: tan;
+    }
+}
+
+
+footer {
+    font-family: Arial, Verdana, "Times New Roman", serif;
+    font-size: small;
+    text-align: left;
+    background-color: lightgray;
+    padding: 15px;
+}
+
+fieldset{
+    margin-top: 30px;
+    padding-top: 30px;
+}
+
+table {
+    border: 3px solid black;
+}
+
+tbody{
+    background-color: lightgray;
+}
+
+thead {
+    background-color: grey;
+}
+
+ol{
+    list-style-type: upper-roman;
+}
+
+ul {
+    list-style-type: square;
+}
+
+form{
+    width: 100%;
+}
+
+input[type=text]{
+    width: 50%;
+    padding: 7px;
+    margin: 5px 0;
+    box-sizing: border-box;
+}
+
+#fbook{
+    display: block;
+    float:left;
+}
+
+#fbook.hidden{
+    display: none;
+}
+
+#fbbutton
+{
+    display: block;
+}
+
+#fbbutton.hidden
+{
+    display: none;
+}
+
+#signOutFb{
+    display: block;
+}
+
+#signOutFb.hidden{
+    display: none;
+}
+
+input[type=email]{
+    width: 50%;
+    padding: 7px;
+    margin: 5px 0;
+    box-sizing: border-box;
+}
+
+form input:required {
+    box-shadow: 0 0 3px 1px green;
+}
+form input:invalid {
+    box-shadow: 0 0 3px 1px red;
+}
+
+#sidebar_list{
+    list-style-type: circle;
+    color: black;
+    font-weight: bold;
+}
+
+#odstavec {
+    margin-bottom: 30px;
+    font-size: medium;
+}
+
+#my_photo{
+    opacity: 0.8;
+    border-radius: 50%;
+    max-width: 20%;
+    height: auto;
+    margin-left: auto;
+    padding: 15px;
+}
+
+#logo_header{
+    max-width: 200px;
+}
+
+#palm {
+    width: 100%;
+    animation: circle 5s infinite;
+}
+
+#erasmus{
+    width: 70%;
+    float: right;
+    padding: 20px;
+}
+
+#about_author{
+    min-height: 500px;
+}
+
+@keyframes circle {
+    0%{
+        border-radius: 40%;
+    }
+    30%{
+        border-radius: 50%;
+    }
+    50% {
+        border-radius: 80%;
+    }
+    80%{
+        border-radius: 40%;
+    }
+    100%{
+        border-radius: 40%;
+    }
+}
+
+legend {
+    background-color: #000;
+    color: #fff;
+    padding: 3px 6px;
+}
+
+.output {
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+input {
+    margin: .4rem;
+}

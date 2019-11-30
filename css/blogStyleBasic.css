@@ -1,0 +1,43 @@
+html {
+    font-size: 100%;
+    font-family: "Tw Cen MT", Arial, Helvetica, sans-serif;
+    font-style: normal; /*normal, italic, oblique (obl.-similar to italic*/
+    font-weight: normal; /*normal, bold*/
+    text-align: justify; /*justify, left, right, center*/
+    color: black;
+}
+
+label{
+    vertical-align: top;
+    display: inline-block; /*instead of inline (default)*/
+    min-width: 6em;
+}
+
+label.long{
+    min-width: 8em;
+}
+
+input, textarea{
+    margin-bottom: 0.5em;
+}
+
+.warning{
+    color: red;
+}
+
+
+#googleSignIn{
+    float: right;
+}
+
+.skryty {display:none;}
+
+
+.zobraz {display:block;}
+
+
+body{
+    padding: 1rem;
+}
+
+

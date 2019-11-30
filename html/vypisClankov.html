@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/styleListArticles.css">
+    <title>Article List</title>
+    <style>
+        fieldset{ display: inline-block}
+     </style>
+    <meta name="google-signin-client_id" content="1017210445730-ckt95lbbcuceaifcavsm26t1o6qh76m4.apps.googleusercontent.com">
+    <link rel="stylesheet"
+          href="../css/blogStyleBasic.css"
+          media="screen" />
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId            : '287193222166891',
+                autoLogAppEvents : true,
+                xfbml            : true,
+                version          : 'v3.3'
+            });
+            FB.getLoginStatus(function(response) {
+                if (response.status === 'connected' && localStorage.loggedOut !== 'out') {
+                    signInFB();
+                }
+            });
+        };
+    </script>
+    <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+</head>
+
+<body>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/sk_SK/sdk.js#xfbml=1&version=v3.3&appId=287193222166891&autoLogAppEvents=1"></script>
+<div class="wrapper">
+
+<div class="header">
+    <header>
+        <nav id="nav">
+
+            <a href="articles.html" title="Welcome !!! ">Home</a>
+            <a href="article1.html" title="Erasmus Student Network Slovakia">About ESN</a>
+            <a href="article2.html" title="Our partners are">Partners</a>
+            <a href="article3.html" title="Contact us">Contact</a>
+            <a href="../makePicture.html" title="Make picture">Make pic</a>
+            <a href="vypisClankov.html" title="Article list">Article list</a>
+
+        </nav>
+
+        <aside id="googleSignIn">
+            <div id="SignInButton"></div>
+            <div id="SignedIn">
+                <small>Ste prihlásený ako <span id="userName"></span> <button onclick="signOut()">Odhlásiť sa</button></small>
+            </div>
+        </aside>
+
+        <div class="fbook" id="fbook">
+
+            <fb:login-button id="fbbutton" class="fb" scope="public_profile" onlogin="checkFacebookLogin();"></fb:login-button>
+            <div id="signOutFb" class="signOutFB hidden">
+                <strong>FaceBook:</strong>
+                <button class="SignOutButtons" onclick="FB.logout(function(response) {signOutFB();});">Odhlásiť sa</button>
+            </div>
+        </div>
+
+
+    </header>
+
+    <div class="breadcrumb">
+        <li><a href="articles.html">Home</a></li>
+        <li>Article list</li>
+
+
+        <div class="menu">
+            <button id="menuClNazov" onclick="zobrazAleboSkriMenu()">Menu</button>
+            <nav id="menuCl" class="menu skryty">
+                <button onclick="nextPage()">Next</button>
+                <button onclick="previousPage()">Previous</button>
+                <button onclick="turnWeb(this)">Weak eyesight</button>
+                <button onclick="location.href='DomMoveSensorsApp.html'">Move app</button>
+                <button onclick="location.href='../formular.html'">New article</button>
+            </nav>
+        </div>
+    </div>
+
+
+</div>
+
+<div class="content">
+
+<section class="article" id="blok">
+     <img src="../pictures/palm.png" alt="palm" id="palm">
+     <h1 id="nadpis" class="nadpis"><span class="obdlznik_v_texte">Article</span>  List</h1>
+
+    <form>
+        <fieldset style="background-color: lightgray">
+            <legend>Search article:</legend>
+            <label>Author:
+                <input type="text" size="10" id="author"
+                       maxlength="15" value="">
+            </label>
+            <label>Title:
+                <input type="text" size="10" id="title"
+                       maxlength="15" value="">
+            </label>
+            <label>Content:
+                <input type="text" size="10" id="content"
+                       maxlength="15" value="">
+            </label>
+            <label>Tag:
+                <input type="text" size="10" id="tag"
+                       maxlength="15" value="">
+            </label>
+
+            <label>Date from:
+                <input type="text" size="10" id="dFrom" title="yyyy-MM-dd"
+                       minlength="10" maxlength="10" value="">
+            </label>
+            <label>Date to:
+                <input type="text" size="10" id="dTo" title="Oyyyy-MM-dd"
+                       minlength="10" maxlength="10" value="">
+            </label>
+            <label>Updated from date:
+                <input type="text" size="10" id="uFrom" title="yyyy-MM-dd"
+                       minlength="10" maxlength="10" value="">
+            </label>
+            <label>Updated to date:
+                <input type="text" size="10" id="uTo" title="yyyy-MM-dd"
+                       minlength="10" maxlength="10" value="">
+            </label>
+            <br>
+
+            <input type="reset" onclick="addScroll();" value="Delete" class="search_button" />
+            <button type="button" onclick="getData();" class="search_button" >Search</button>
+
+        </fieldset>
+
+    </form>
+
+    <button onclick="location.href='../formular.html'" class="new_article_button">New article</button>
+     <div id="clanky"></div>
+
+
+
+</section>
+
+</div>
+
+<div class="sidebar">
+     <button onclick="turnWeb(this)" class="weak_eye">Weak eyesight</button>
+        <ul id="sidebar_list">
+            <li> <a href="articles.html" title="Welcome !!! ">Home</a></li>
+            <li> <a href="article1.html" title="Erasmus Student Network Slovakia">About ESN</a></li>
+            <li> <a href="article2.html" title="Our partners are">Partners</a></li>
+            <li> <a href="article3.html" title="Contact us">Contact</a></li>
+            <li> <a href="../formular.html" title="New article">New article</a></li>
+        </ul>
+</div>
+
+<div class="footer">
+<footer>
+    <nav id="navigacia"></nav>
+</footer>
+</div>
+
+<!----------------------------- Mustache template -------------------------------------------------------------------->
+
+    <script id="listOfArticlesMTemplate" type="text/template">
+        {{#articles}}
+        <article>
+            <hr>
+            <h2><a href="../article.html?id={{id}}">{{title}}</a></h2>
+            <p>Author: {{author}}</p>
+            <p>Date of created: {{dateCreated}}</p>
+        </article>
+        {{/articles}}
+        {{#previous_button}}
+        <button class="PpohybTlacidla" onclick="previousPage()" >Previous</button>
+        {{/previous_button}}
+        {{#next_button}}
+        <button onclick="nextPage()" class="NpohybTlacidla">Next></button>
+        {{/next_button}}
+
+
+    </script>
+
+<!----------------------------- JavaScript ---------------------------------------------------------------------------->
+    <script src="../js/common/settings.js"></script>
+    <script src="../js/ziskajClanky.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.3.0/mustache.min.js"></script>
+
+    <script src="../js/ForSigningIn.js"></script>
+    <script src="../js/82GoogleAccessBetter.js"></script>
+    <script src="https://apis.google.com/js/platform.js?onload=startGSingIn" async defer></script>
+
+</div>
+</body>
+</html>

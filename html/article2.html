@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/styl.css">
+    <title>Partners</title>
+    <meta name="google-signin-client_id" content="1017210445730-ckt95lbbcuceaifcavsm26t1o6qh76m4.apps.googleusercontent.com">
+    <link rel="stylesheet"
+          href="../css/blogStyleBasic.css"
+          media="screen" />
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId            : '287193222166891',
+                autoLogAppEvents : true,
+                xfbml            : true,
+                version          : 'v3.3'
+            });
+            FB.getLoginStatus(function(response) {
+                if (response.status === 'connected' && localStorage.loggedOut !== 'out') {
+                    signInFB();
+                }
+            });
+        };
+    </script>
+    <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+
+<div class="header">
+<header>
+    <nav>
+
+        <a href="articles.html" title="Welcome !!! ">Home</a>
+        <a href="article1.html" title="Erasmus Student Network Slovakia">About ESN</a>
+        <a href="article2.html" title="Our partners are">Partners</a>
+        <a href="article3.html" title="Contact us">Contact</a>
+        <a href="../makePicture.html" title="Make picture">Make pic</a>
+        <a href="vypisClankov.html" title="Article list">Article list</a>
+
+    </nav>
+    <aside id="googleSignIn">
+        <div id="SignInButton"></div>
+        <div id="SignedIn">
+            <small>Ste prihlásený ako <span id="userName"></span> <button onclick="signOut()">Odhlásiť sa</button></small>
+        </div>
+    </aside>
+
+    <div class="fbook" id="fbook">
+
+        <fb:login-button id="fbbutton" class="fb" scope="public_profile" onlogin="checkFacebookLogin();"></fb:login-button>
+        <div id="signOutFb" class="signOutFB hidden">
+            <strong>FaceBook:</strong>
+            <button class="SignOutButtons" onclick="FB.logout(function(response) {signOutFB();});">Odhlásiť sa</button>
+        </div>
+    </div>
+
+    <script src="../js/82GoogleAccessBetter.js"></script>
+    <script src="https://apis.google.com/js/platform.js?onload=startGSingIn" async defer></script>
+
+</header>
+
+<div class="breadcrumb">
+    <li><a href="articles.html">Home</a></li>
+    <li>Partners</li>
+</div>
+
+</div>
+
+<div class="content">
+
+<section class="article" id="partners">
+    <img src="../pictures/palm.png" alt="palm" id="palm">
+    <h1 class="nadpis"><span class="obdlznik_v_texte">Our</span> partners are:</h1>
+    <ul>
+        <li><p>
+            <img src="../pictures/VisitKosice_logo.jpg" alt="logo kosice" hspace="10">
+            <a href="http://www.visitkosice.eu/" target="_blank">Kosice - TOURISM</a>
+        </p></li>
+        <li><p>
+            <img src="../pictures/sample_esn_logo_0.jpg" alt="logo esn" hspace="10">
+            <a href="https://esn.org/" target="_blank">ESN International</a>
+        </p></li>
+        <li><p>
+            <img src="../pictures/ef_logo.png" alt="logo ef" hspace="10">
+            <a href="http://www.ef-slovakia.sk/" target="_blank">EF Education First</a>
+        </p></li>
+        <li><p>
+            <img src="../pictures/tuke_logo.jpg" alt="logo tuke" hspace="10" width="120">
+            <a href="http://www.tuke.sk/" target="_blank">The Technical University of Kosice</a>
+        </p></li>
+        <li><p>
+            <img src="../pictures/uvlf_logo.jpg" alt="logo uvlf" hspace="10" width="120">
+            <a href="http://www.uvlf.sk/en" target="_blank">The University of Veterinary Medicine and Pharmacy in Košice</a>
+        </p></li>
+        <li><p>
+            <img src="../pictures/upjs_logo.jpg" alt="logo ujps" hspace="10" width="120">
+            <a href="http://www.upjs.sk/en/" target="_blank">University of Pavol Jozef Šafárik in Košice</a>
+        </p></li>
+        <li><p>
+            <img src="../pictures/flixbus_logo.png" alt="logo flixbus" hspace="10">
+            <a href="https://global.flixbus.com/" target="_blank">FlixBus</a>
+        </p></li>
+        <li><p>
+            <img src="../pictures/funfon_logo.png" alt="logo funfon" hspace="10">
+            <a href="https://www.funfon.sk/" target="_blank">FunFón</a>
+        </p></li>
+        <li><p>
+            <img src="../pictures/subway_logo.jpg" alt="logo subway" hspace="10">
+            <a href="https://www.subway.com/en-US" target="_blank">Subway</a>
+        </p></li>
+    </ul>
+</section>
+
+    <form>
+        <fieldset style="background: khaki">
+            <legend><b>Comment</b></legend>
+            <label>Author:
+                <input type="text" size="20"
+                       maxlength="50" required spellcheck="false" lang="sk"/>
+            </label>
+
+            <br><br>
+
+            <label>Content:<br>
+                <textarea name="mainText" cols="100" rows="10" required spellcheck="true" lang="sk">This text replace your comment...</textarea>
+            </label>
+
+            <br>
+            <input type="reset" value="Delete" />
+            <input type="submit" value="Send" />
+            <input type="button" value="Home" onclick="location.href='articles.html';" />
+        </fieldset>
+    </form>
+</div>
+
+<div class="sidebar">
+        <ul id="sidebar_list">
+            <li> <a href="articles.html" title="Welcome !!! ">Home</a></li>
+            <ul>
+                <li><a href="#introduction">Introduction ESN</a></li>
+                <li><a href="#about_author">About author</a></li>
+            </ul>
+            <li> <a href="article1.html" title="Erasmus Student Network Slovakia">About ESN</a></li>
+            <li> <a href="article2.html" title="Our partners are">Partners</a></li>
+            <li> <a href="article3.html" title="Contact us">Contact</a></li>
+
+        </ul>
+</div>
+
+<div class="footer">
+<footer>
+            Datum vytvorenia: 26.2.2019<br>
+            Autor: <a href="mailto:maria.medvidova@student.tuke.sk?Subject=Reakcia%20na%20Váš%20blog%20s%20názvom%20ESN">Mária Medviďová</a><br>
+            Email: maria.medvidova@student.tuke.sk
+        <details>
+            <summary>Copyright 2019.</summary>
+            <p> - by Maja. All Rights Reserved.</p>
+            <p>All content and graphics on this web site are the property of author.</p>
+        </details>
+</footer>
+</div>
+
+</div>
+<script src="js/ForSigningIn.js"></script>
+<script src="js/82GoogleAccessBetter.js"></script>
+<script src="https://apis.google.com/js/platform.js?onload=startGSingIn" async defer></script>
+</body>
+</html>

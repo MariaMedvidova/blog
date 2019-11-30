@@ -1,0 +1,10 @@
+.animal {
+    position: absolute;
+    top   : 100px;
+    left  : 100px;
+    width: 300px;
+    border-radius: 100%;
+    border-style: solid;
+}
+
+

@@ -1,0 +1,10 @@
+{{#comments}}
+    <hr>
+     <button onclick="deleteComment({{id}})" id="buttonDelete">X</button>
+     <button onclick="updateComment({{id}})" id="buttonEdit"  >Edit</button>
+    <p>Author: {{author}}</p>
+    <p>Date od created: {{dateCreated}}</p>
+    <p>Date of last updated: {{lastUpdated}}</p>
+    <p>Text: {{text}}</p>
+    <hr>
+{{/comments}}

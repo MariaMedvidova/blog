@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/styl.css">
+    <meta name="author" content="Maria Medvidova">
+    <title>About us</title>
+    <meta name="google-signin-client_id" content="1017210445730-ckt95lbbcuceaifcavsm26t1o6qh76m4.apps.googleusercontent.com">
+    <link rel="stylesheet" href="../css/normalize.css" media="screen" />
+    <link rel="stylesheet"
+          href="../css/blogStyleBasic.css"
+          media="screen" />
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId            : '287193222166891',
+                autoLogAppEvents : true,
+                xfbml            : true,
+                version          : 'v3.3'
+            });
+            FB.getLoginStatus(function(response) {
+                if (response.status === 'connected' && localStorage.loggedOut !== 'out') {
+                    signInFB();
+                }
+            });
+        };
+    </script>
+    <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+</head>
+
+<!--<article>
+   <header>
+         <h1 class="nadpis"><span class="obdlznik_v_texte">{{title}}</span></h1>
+          <p>Author: {{author}}</p>
+          <p>Date of created: {{dateCreated}}</p>
+          <p>Date of last updated: {{lastUpdated}}</p>
+          <p>Link to image: {{linkImage}}</p>
+           <p>Tags: {{tags}}</p>
+           <p>Content: {{content}}</p>
+   </header>
+
+</article>-->
+
+<body>
+<div class="wrapper">
+
+<div class="header">
+<header>
+    <nav>
+        <a href="articles.html" title="Welcome !!! ">Home</a>
+        <a href="article1.html" title="Erasmus Student Network Slovakia">About ESN</a>
+        <a href="article2.html" title="Our partners are">Partners</a>
+        <a href="article3.html" title="Contact us">Contact</a>
+        <a href="../makePicture.html" title="Make picture">Make pic</a>
+        <a href="vypisClankov.html" title="Article list">Article list</a>
+    </nav>
+
+    <aside id="googleSignIn">
+        <div id="SignInButton"></div>
+        <div id="SignedIn">
+            <small>Ste prihlásený ako <span id="userName"></span> <button onclick="signOut()">Odhlásiť sa</button></small>
+        </div>
+    </aside>
+
+    <div class="fbook" id="fbook">
+
+        <fb:login-button id="fbbutton" class="fb" scope="public_profile" onlogin="checkFacebookLogin();"></fb:login-button>
+        <div id="signOutFb" class="signOutFB hidden">
+            <strong>FaceBook:</strong>
+            <button class="SignOutButtons" onclick="FB.logout(function(response) {signOutFB();});">Odhlásiť sa</button>
+        </div>
+    </div>
+
+    <script src="../js/82GoogleAccessBetter.js"></script>
+    <script src="https://apis.google.com/js/platform.js?onload=startGSingIn" async defer></script>
+
+</header>
+    <div class="breadcrumb">
+        <li><a href="articles.html">Home</a></li>
+        <li>About us</li>
+    </div>
+</div>
+
+<div class="content">
+
+<section class="article">
+    <img src="../pictures/palm.png" alt="palm" id="palm">
+
+    <h2 class="nadpis">
+        About  <span class="obdlznik_v_texte">us</span>
+    </h2>
+
+    <h6 class="nadpis_mensi">Erasmus Student Network Slovakia (ESN Slovakia):</h6>
+
+    <div class="centerUl">
+        <ul>
+             <li>is a non-profit student organisation</li>
+             <li>our mission is to represent international students</li>
+             <li>one of the local sections is ESN Kosice</li>
+        </ul>
+    </div>
+
+</section>
+
+<section class="article">
+    <br>
+<h2 class="nadpis_mensi"><span class="obdlznik_v_texte"> Description</span> of the Section</h2>
+
+<p>
+The character of our section is rather special. We were established
+for the purpose of Pavol Jozef Šafárik University. Moreover, we cooperate with
+two other universities in the city and take care of their Erasmus students;
+therefore, we have to be organized quite well. Difficulties in managing the section
+are relieved in connecting Erasmus students thus sharing ESN spirit among them.
+</p>
+</section>
+
+<section class="article">
+    <br>
+<img src="../pictures/history.jpg" align="left" width="300" hspace="20" alt="picture of history">
+
+<h2 class="nadpis_mensi">History of the Section</h2>
+
+<p>
+To trace the beginning of ESN UPJŠ Košice we do not have to go far back
+in time, only to 2009. Founders of the section, Norbert Ostro and Mária
+Juraševská, have done the most difficult job negotiating with universities and
+becoming salient; however, much work is still to be done in order to be fully efficient.
+</p>
+
+<p> <a href="https://www.esn.org/" target="_blank"> International ESN page </a> </p>
+</section>
+
+<section class="article">
+    <br>
+<h3 class="nadpis_mensi"><span class="obdlznik_v_texte"> Universities:</span></h3>
+
+<h4>We have 3 universities:</h4>
+<ol>
+    <li>Pavol Jozef Šafárik University in Košice </li>
+    <li>The University of Veterinary Medicine and Pharmacy in Košice</li>
+    <li>The Technical University of Kosice</li>
+</ol>
+
+
+<table>
+    <thead>
+        <tr>
+            <th><i>Logo</i></th>
+            <th><i>Name</i></th>
+            <th><i>Description</i></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th><img src="../pictures/upjs_logo.jpg" alt="upjs_logo" width="70"></th>
+            <th>Pavol Jozef Šafárik University</th>
+            <th>At present the University has five
+                faculties – Faculty of Medicine, Faculty of Science, Faculty of Law, Faculty of
+                Public Administration and Faculty of Arts – which prepare physicians and
+                dentists, experts in natural sciences, mathematics and informatics, teachers,
+                lawyers, specialists for public administration and specialists for psychology,
+                philosophy and theory of communication.
+            </th>
+        </tr>
+
+        <tr>
+            <th><img src="../pictures/uvlf_logo.jpg" alt="uvlf_logo" width="70"></th>
+            <th>The University of Veterinary Medicine and Pharmacy</th>
+            <th>This university is the only institution in the Slovak Republic
+                offering higher education in the veterinary field. It has been providing the
+                veterinary education in English for 15 years.
+            </th>
+        </tr>
+
+        <tr>
+            <th><img src="../pictures/tuke_logo.jpg" alt="tuke_logo" width="70"></th>
+            <th>The Technical University</th>
+            <th>Today
+                it has nine faculties, Faculty of Heavy Engineering, Faculty of Mining, Faculty
+                of Metallurgy, Faculty of Electrical Engineering, Faculty of Civil Engineering,
+                Faculty of Professional Studies, Faculty of Manufacturing Technologies, Faculty
+                of Economics, Faculty of Arts and The Faculty of Aeronautics.
+            </th>
+        </tr>
+    </tbody>
+</table>
+
+</section>
+
+<form>
+        <fieldset style="background: khaki">
+            <legend><b>Comment</b></legend>
+            <label>Author:
+                <input type="text" size="20"
+                       maxlength="50" required spellcheck="false" lang="sk"/>
+            </label>
+
+            <br><br>
+
+            <label>Content:<br>
+                <textarea name="mainText" cols="100" rows="10" required spellcheck="true" lang="sk">This text replace your comment...</textarea>
+            </label>
+
+            <br>
+            <input type="reset" value="Delete" />
+            <input type="submit" value="Send" />
+            <input type="button" value="Home" onclick="location.href='articles.html';" />
+        </fieldset>
+    </form>
+
+</div>
+
+<div class="sidebar">
+        <ul id="sidebar_list">
+            <li> <a href="articles.html" title="Welcome !!! ">Home</a></li>
+            <ul>
+                <li><a href="#introduction">Introduction ESN</a></li>
+                <li><a href="#about_author">About author</a></li>
+            </ul>
+            <li> <a href="article1.html" title="Erasmus Student Network Slovakia">About ESN</a></li>
+            <li> <a href="article2.html" title="Our partners are">Partners</a></li>
+            <li> <a href="article3.html" title="Contact us">Contact</a></li>
+
+        </ul>
+</div>
+
+<div class="footer">
+<footer>
+            <time datetime="2019-02-26">Datum vytvorenia 26.02.2019</time><br>
+    Autor: <a href="mailto:maria.medvidova@student.tuke.sk?Subject=Reakcia%20na%20Váš%20blog%20s%20názvom%20ESN">Mária Medviďová</a><br>
+    Email: maria.medvidova@student.tuke.sk
+        <details>
+            <summary>Copyright 2019.</summary>
+            <p> - by Maja. All Rights Reserved.</p>
+            <p>All content and graphics on this web site are the property of author.</p>
+        </details>
+</footer>
+</div>
+
+</div>
+<script src="js/ForSigningIn.js"></script>
+<script src="js/82GoogleAccessBetter.js"></script>
+<script src="https://apis.google.com/js/platform.js?onload=startGSingIn" async defer></script>
+</body>
+</html>

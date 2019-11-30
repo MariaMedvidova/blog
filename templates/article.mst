@@ -1,0 +1,17 @@
+<article>
+   <header>
+         <h1 class="nadpis"><span class="obdlznik_v_texte">{{title}}</span></h1>
+          <p>Author: {{author}}</p>
+          <p>Date of created: {{dateCreated}}</p>
+          <p>Date of last updated: {{lastUpdated}}</p>
+          {{#imageLink}}
+                      <figure>
+                      <img width="500" src="{{imageLink}}" alt="article figure" />
+                      </figure>
+           {{/imageLink}}
+           <p>Tags: {{tags}}</p>
+           <p>Content: {{{content}}}</p>
+     </header>
+</article>
+
+

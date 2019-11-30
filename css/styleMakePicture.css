@@ -1,0 +1,59 @@
+body{
+    margin:0;
+    padding:0;
+    font-family:sans-serif;
+    background-image: url("../pictures/background4.jpg");
+}
+
+canvas{
+    margin-top: 3%;
+    background:#fff;
+    outline: gray 10px solid;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+#yellow{
+    background-color: yellow;
+    border-radius: 50%;
+}
+
+#red{
+    background-color: red;
+    border-radius: 50%;
+}
+#black{
+    background-color: black;
+    border-radius: 50%;
+}
+#green{
+    background-color: green;
+    border-radius: 50%;
+}
+#pink{
+    background-color: pink;
+    border-radius: 50%;
+}
+#white{
+    background-color: white;
+    border-radius: 50%;
+}
+
+
+
+
+
+
+a {
+    background: #69c;
+    color: #fff;
+    padding: 5px 10px;
+}
+
+button{
+    left:50%;
+    padding: 10px;
+    margin: 10px;
+    background-color: lightgray;
+}

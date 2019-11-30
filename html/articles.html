@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../css/styl.css">
+    <title>Home</title>
+    <meta name="google-signin-client_id" content="1017210445730-ckt95lbbcuceaifcavsm26t1o6qh76m4.apps.googleusercontent.com">
+    <link rel="stylesheet" href="../css/normalize.css" media="screen" />
+    <link rel="stylesheet"
+          href="../css/blogStyleBasic.css"
+          media="screen" />
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId            : '287193222166891',
+                autoLogAppEvents : true,
+                xfbml            : true,
+                version          : 'v3.3'
+            });
+            FB.getLoginStatus(function(response) {
+                if (response.status === 'connected' && localStorage.loggedOut !== 'out') {
+                    signInFB();
+                }
+            });
+        };
+    </script>
+    <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+
+<div class="header">
+<header>
+    <nav>
+        <a href="articles.html" title="Welcome !!! ">Home</a>
+        <a href="article1.html" title="Erasmus Student Network Slovakia">About ESN</a>
+        <a href="article2.html" title="Our partners are">Partners</a>
+        <a href="article3.html" title="Contact us">Contact</a>
+        <a href="../makePicture.html" title="Make picture">Make pic</a>
+        <a href="vypisClankov.html" title="Article list">Article list</a>
+
+    </nav>
+    <aside id="googleSignIn">
+        <div id="SignInButton"></div>
+        <div id="SignedIn">
+            <small>Ste prihlásený ako <span id="userName"></span> <button onclick="signOut()">Odhlásiť sa</button></small>
+        </div>
+    </aside>
+
+    <div class="fbook" id="fbook">
+
+        <fb:login-button id="fbbutton" class="fb" scope="public_profile" onlogin="checkFacebookLogin();"></fb:login-button>
+        <div id="signOutFb" class="signOutFB hidden">
+            <strong>FaceBook:</strong>
+            <button class="SignOutButtons" onclick="FB.logout(function(response) {signOutFB();});">Odhlásiť sa</button>
+        </div>
+    </div>
+
+    <script src="../js/82GoogleAccessBetter.js"></script>
+    <script src="https://apis.google.com/js/platform.js?onload=startGSingIn" async defer></script>
+
+
+</header>
+</div>
+
+<div class="content">
+<section class="article">
+
+    <img src="../pictures/palm.png" alt="palm" id="palm">
+
+    <h2 class="nadpis">
+        <b>ESN KOSICE</b>
+    </h2>
+
+    <p class="nadpis_mensi">
+        Welcome to the blog of
+        <span class="obdlznik_v_texte"> ESN Kosice </span>
+    </p>
+
+    <p>
+        Erasmus Student Network (ESN) is a Europe-wide student organisation.
+        Its goal is to support and develop student exchange on a local, national and international level.
+        It is composed of around 13,500 members in over 530 local sections in 40 countries in Higher Education Institutions,
+        including universities, polytechnics, and university colleges. The network offers its services to around 160,000 international students.
+    </p>
+
+    <p>
+        ESN facilitates the social and personal integration of international students.
+        The local ESN sections offer help, guidance and valuable information to both exchange
+        students and students doing a full degree abroad. ESN provides information about academic
+        exchange programmes and student mobility in general.
+    </p>
+</section>
+
+<section id="about_author" style="background-color: khaki" >
+    <h2 class="nadpis">About author / About me</h2>
+
+    <img src="../pictures/my_photo.jpg" alt="my photo" id="my_photo" align="left">
+
+    <p>
+        <h2> Mária Medvidova</h2>
+        <div id="odstavec">Student at Technical University in Kosice and member of ESN Kosice </div>
+        <div>Hi! I am student of informatics and member of student organization ESN Kosice.
+            I live in small village called Koromla. Before I studied at Charles University in Prague.
+            I have big family and I love travelling. </div>
+    </p>
+</section>
+</div>
+
+<div class="sidebar">
+    <ul id="sidebar_list">
+        <li> <a href="articles.html" title="Welcome !!! ">Home</a></li>
+        <ul>
+            <li><a href="#introduction">Introduction ESN</a></li>
+            <li><a href="#about_author">About author</a></li>
+        </ul>
+        <li> <a href="article1.html" title="Erasmus Student Network Slovakia">About ESN</a></li>
+        <li> <a href="article2.html" title="Our partners are">Partners</a></li>
+        <li> <a href="article3.html" title="Contact us">Contact</a></li>
+        <li> <a href="../formular.html" title="New article">New article</a></li>
+    </ul>
+</div>
+
+<div class="footer">
+<footer>
+    <div>Datum vytvorenia: 26.2.2019</div>
+    <div> Autor: <a href="mailto:maria.medvidova@student.tuke.sk?Subject=Reakcia%20na%20Váš%20blog%20s%20názvom%20ESN">Mária Medviďová</a></div>
+    Email: maria.medvidova@student.tuke.sk
+        <details>
+            <summary>Copyright 2019.</summary>
+            <p> - by Maja. All Rights Reserved.</p>
+            <p>All content and graphics on this web site are the property of author.</p>
+        </details>
+</footer>
+</div>
+
+</div>
+<script src="js/ForSigningIn.js"></script>
+<script src="js/82GoogleAccessBetter.js"></script>
+<script src="https://apis.google.com/js/platform.js?onload=startGSingIn" async defer></script>
+</body>
+</html>
